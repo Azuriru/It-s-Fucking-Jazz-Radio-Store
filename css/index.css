@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Calistoga|Cinzel+Decorative|Josefin+Sans|Monoton|Rye|Work+Sans&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+/* Backgrounds and positions of main stuff */
+body {
+    background: black;
+    color: #eaeaea;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    cursor: url('../img/cursor/star.png') 12.5 0, auto;
+}
+
+body::before {
+    content: '';
+    background: #191919;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    filter: brightness(.5);
+    z-index: -1;
+}
+
+/* Scrollbars */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#scrollwrap {
+    overflow-y: scroll;
+    height: -webkit-fill-available;
+}
+
+#scrollwrap::-webkit-scrollbar {
+	width: 14px;
+}
+
+#scrollwrap::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	border: 3px solid transparent;
+	background-clip: padding-box;
+}
+
+#scrollwrap::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+/* Global Classes */
+.uc {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.hl {
+    color: #ce9b59;
+}
+
+/* Main */
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding: 20px 20px 18px;
+}
+
+.header .header-item {
+    width: fit-content;
+    height: fit-content;
+    margin-right: 20px;
+}
+
+.header .header-item:last-of-type {
+    margin-right: 0;
+}
+
+.header .header-item.fancy-logo-that-unai-didnt-give {
+	font-weight: bold;
+}
+
+#logo {
+    font-size: 30px;
+    font-family: Cinzel Decorative;
+    letter-spacing: -1px;
+    padding-right: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.size {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: #ce9b59;
+    border-width: 2px 0;
+    border-style: solid;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.size .size-select {
+    padding: 3px 10px 0 10px;
+    border-right: 1px solid #ce9b59;
+}
+
+.size .size-select:first-of-type {
+    padding-left: 0;
+}
+
+.size .size-select:last-of-type {
+    padding-right: 0;
+    border-right: none;
+}
+
+.radio-slideshow {
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.radio-slideshow > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slideshow {
+    height: 300px;
+    width: 50%;
+    object-fit: cover;
+}
+
+.description {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: right;
+    width: 50%;
+    margin: auto 50px;
+}
+
+.price {
+    margin: 20px 0;
+    font-size: 35px;
+}
+
+.price::after {
+    content: '€';
+}
+
+button {
+    font-family: inherit;
+    font-size: 16px;
+    background: #ce9b59;
+    color: white;
+    border: none;
+    padding: 10px 12px 8px;
+}
+
+/* Debugging */
+.header {
+    /* border: 1px solid white; */
+}
