@@ -152,36 +152,45 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: space-between;
     height: 100%;
+    position: relative;
 }
 
 .navigator {
     position: absolute;
-    width: 7px;
-    height: 7px;
-    background: rgb(255, 255, 255);
-    border-radius: 50%;
-    top: 430px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
+    width: 100%;
+    height: 30px;
+    background: transparent;
+    top: 270px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.navigator::after,
-.navigator::before {
-	content: '';
-	background-color: rgba(255, 255, 255, .4);
-	width: 7px;
-	height: 7px;
-	position: absolute;
+.navigator .dollop {
+	background-color: rgba(255, 255, 255, .3);
+	width: 8px;
+	height: 8px;
 	border-radius: 50%;
+	margin: 0 4px;
+	transition: .2s background ease;
+	cursor: pointer;
 }
 
-.navigator::after {
-	left: -15px;
+.navigator .dollop:first-of-type {
+	margin-left: 0;
 }
 
-.navigator::before {
-	left: 15px;
+.navigator .dollop:last-of-type {
+	margin-right: 0;
+}
+
+.navigator .dollop:hover {
+	background-color: rgba(255, 255, 255, .6);
+}
+
+.navigator .dollop.current {
+	background-color: rgba(255, 255, 255, 1);
 }
 
 .slideshow {
