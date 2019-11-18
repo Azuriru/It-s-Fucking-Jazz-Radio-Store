@@ -126,12 +126,22 @@ body::-webkit-scrollbar {
 .radio-slideshow > div {
     display: flex;
     justify-content: space-between;
+    height: 100%;
 }
 
 .slideshow {
-    height: 300px;
+    height: 100%;
     width: 50%;
     object-fit: cover;
+}
+
+.gradient {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-100%);
+    width: 200px;
+    height: 300px;
+    background: linear-gradient(to right, transparent 0%, #181818), linear-gradient(to right, transparent 0%, #181818);
 }
 
 .description {
@@ -139,7 +149,13 @@ body::-webkit-scrollbar {
     line-height: 24px;
     text-align: right;
     width: 50%;
+    height: 100%;
+    display: flex;
+}
+
+.description > div {
     margin: auto 50px;
+    width: 100%;
 }
 
 .price {
@@ -154,11 +170,68 @@ body::-webkit-scrollbar {
 button {
     font-family: inherit;
     font-size: 16px;
-    background: #ce9b59;
+    background: transparent;
     color: white;
-    border: none;
+    border: 2px solid #ce9b59;
     padding: 10px 12px 8px;
+    position: relative;
 }
+/*
+button::after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	transition: all 0.3s;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #ce9b59;
+}
+
+button:hover::after,
+button:active::after {
+    width: 100%;
+}
+*/
+button::before {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	transition: all 0.3s;
+	width: 0%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: white;
+	mix-blend-mode: difference;
+}
+
+button::after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	transition: all 0.3s;
+	width: 0%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #3164a6;
+}
+
+button::before {
+    z-index: 1;
+}
+
+button::after {
+    z-index: -1;
+}
+
+button:hover:before,
+button:hover:after {
+    width: 100%;
+}
+
 
 /* Debugging */
 .header {
