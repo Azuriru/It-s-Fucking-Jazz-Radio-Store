@@ -1,0 +1,44 @@
+.underline {
+    position: relative;
+}
+
+.underline.active {
+    color: #ce9b59;
+}
+
+.underline.active:before,
+.underline.active:after {
+    background-color: #ce9b59;
+}
+
+.size .size-select:before,
+.underline:before,
+.size .size-select:after,
+.underline:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.size .size-select:before,
+.underline:before {
+    right: 50%;
+}
+
+.size .size-select:after,
+.underline:after {
+    left: 50%;
+}
+
+.size .size-select:hover:before,
+.underline:hover:before,
+.size .size-select:hover:after,
+.underline:hover:after {
+    width: 50%;
+    opacity: 1;
+}
