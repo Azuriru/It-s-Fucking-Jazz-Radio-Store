@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative|Josefin+Sans&display=swap');
 
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+}
+
+*:focus {
+    outline: none;
 }
 
 /* Backgrounds and positions of main stuff */
@@ -59,8 +64,17 @@ body::-webkit-scrollbar {
     color: #ce9b59;
 }
 
+.center {
+    text-align: center;
+}
+
+/** Necessary because of the font, it's not really center aligned so I'm using fucky methods **/
+.t {
+    padding: 3px 0 0 2px;
+}
+
 /* Main */
-.header {
+.main-header {
     display: flex;
     align-items: center;
     width: 100%;
@@ -68,17 +82,17 @@ body::-webkit-scrollbar {
     padding: 20px 20px 18px;
 }
 
-.header .header-item {
+.main-header .header-item {
     width: fit-content;
     height: fit-content;
     margin-right: 20px;
 }
 
-.header .header-item:last-of-type {
+.main-header .header-item:last-of-type {
     margin-right: 0;
 }
 
-.header .header-item.fancy-logo-that-unai-didnt-give {
+.main-header .header-item.fancy-logo-that-unai-didnt-give {
 	font-weight: bold;
 }
 
@@ -92,7 +106,7 @@ body::-webkit-scrollbar {
     justify-content: center;
 }
 
-.size {
+.header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,21 +115,6 @@ body::-webkit-scrollbar {
     border-style: solid;
     padding: 10px;
     font-size: 14px;
-}
-
-.size .size-select {
-    padding: 3px 0 0 1px;
-    position: relative;
-    text-decoration: none;
-}
-
-.size .size-select.active {
-    color: #ce9b59;
-}
-
-.size .size-select.active:before,
-.size .size-select.active:after {
-    background-color: #ce9b59;
 }
 
 .separator {
@@ -268,6 +267,12 @@ button:hover::after {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
+.content {
+    padding: 20px;
+    border-bottom: 2px solid #ce9b59;
+    line-height: 18px;
+}
+
 .footer {
     width: 100%;
     display: flex;
@@ -293,6 +298,6 @@ button:hover::after {
 }
 
 /* Debugging */
-.header {
+.main-header {
     /* border: 1px solid white; */
 }

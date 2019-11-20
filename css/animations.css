@@ -1,5 +1,6 @@
 .underline {
     position: relative;
+    text-decoration: none;
 }
 
 .underline.active {
@@ -11,9 +12,7 @@
     background-color: #ce9b59;
 }
 
-.size .size-select:before,
 .underline:before,
-.size .size-select:after,
 .underline:after {
     content: "";
     position: absolute;
@@ -25,19 +24,15 @@
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-.size .size-select:before,
 .underline:before {
     right: 50%;
 }
 
-.size .size-select:after,
 .underline:after {
     left: 50%;
 }
 
-.size .size-select:hover:before,
 .underline:hover:before,
-.size .size-select:hover:after,
 .underline:hover:after {
     width: 50%;
     opacity: 1;
